@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who is the Best NBA Player of All Time</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            margin-top: 20px;
+            color: #333;
+        }
+
+        .players {
+            position: relative;
+            width: 1200px;
+            height: 800px;
+            /* 根据需要调整容器的大小 */
+        }
+
+        .player {
+            position: absolute;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .player:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .player img {
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            max-width: 300px;
+            /* 固定最大宽度 */
+            max-height: 300px;
+            /* 固定最大高度 */
+            width: auto;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .player img:hover {
+            border-color: #555;
+        }
+
+        .player-name {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        /* 设置每个球员的具体位置 */
+        .player.lebron {
+            top: 20px;
+            left: 20px;
+        }
+
+        .player.jordan {
+            top: 20px;
+            left: 350px;
+        }
+
+        .player.johnson {
+            top: 20px;
+            left: 680px;
+        }
+
+        .player.kareem {
+            top: 370px;
+            left: 20px;
+        }
+
+        .player.kobe {
+            top: 370px;
+            left: 350px;
+        }
+
+        .player.curry {
+            top: 370px;
+            left: 680px;
+        }
+
+        .player.duncan {
+            top: 680px;
+            left: 20px;
+        }
+
+        .player.shaquille {
+            top: 680px;
+            left: 350px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Who is the Best NBA Player of All Time</h1>
+    <div class="players">
+        <div class="player lebron" data-player="lebron-james">
+            <img src="images/LBJ.jpg" alt="LeBron James">
+            <div class="player-name">LeBron James</div>
+        </div>
+        <div class="player jordan" data-player="Micheal Jordan">
+            <img src="images/Jordan.jpg" alt="Micheal Jordan">
+            <div class="player-name">Micheal Jordan</div>
+        </div>
+        <div class="player johnson" data-player="Magic Johnson">
+            <img src="images/Johnson.jpg" alt="Magic Johnson">
+            <div class="player-name">Magic Johnson</div>
+        </div>
+        <div class="player kareem" data-player="Kareem Abdul-Jabbar">
+            <img src="images/Kareem.jpg" alt="Kareem Abdul-Jabbar">
+            <div class="player-name">Kareem Abdul-Jabbar</div>
+        </div>
+        <div class="player kobe" data-player="Kobe Bryant">
+            <img src="images/Kobe.jpg" alt="Kobe Bryant">
+            <div class="player-name">Kobe Bryant</div>
+        </div>
+        <div class="player curry" data-player="Stephen Curry">
+            <img src="images/Curry.jpg" alt="Stephen Curry">
+            <div class="player-name">Stephen Curry</div>
+        </div>
+        <div class="player duncan" data-player="Tim Duncan">
+            <img src="images/Duncan.jpg" alt="Tim Duncan">
+            <div class="player-name">Tim Duncan</div>
+        </div>
+        <div class="player shaquille" data-player="Shaquille O'Neal">
+            <img src="images/Shaquille.jpg" alt="Shaquille O'Neal">
+            <div class="player-name">Shaquille O'Neal</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const players = document.querySelectorAll('.player');
+            players.forEach(player => {
+                player.addEventListener('click', function () {
+                    const playerId = player.getAttribute('data-player');
+                    window.location.href = `player.html?id=${playerId}`;
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>
